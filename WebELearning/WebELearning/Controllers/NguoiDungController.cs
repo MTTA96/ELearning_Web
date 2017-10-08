@@ -33,9 +33,9 @@ namespace WebELearning.Controllers
             }
             else
             {
-                Admin am = db.Admins.SingleOrDefault(n => n.TaikhoanAdmin == sTaiKhoan && n.MatkhauAdmin == sMatKhau);
+                NguoiDung am = db.NguoiDungs.SingleOrDefault(n => n.TaiKhoan == sTaiKhoan && n.MatKhau == sMatKhau);
 
-                if (am != null)
+                if (am != null && sTaiKhoan != "Admin" && sMatKhau != "123456")
                 {
                     ViewBag.ThongBao = "Chúc mừng đăng nhập thành công!";
                     Session["TaiKhoanAdmin"] = am;
@@ -63,7 +63,7 @@ namespace WebELearning.Controllers
             {
 
 
-                db.NguoiDung.Add(model);
+                db.NguoiDungs.Add(model);
                 db.SaveChanges();
                 ModelState.AddModelError("", "Đăng ký thành công !");
 
