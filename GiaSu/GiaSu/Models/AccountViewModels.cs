@@ -6,8 +6,8 @@ namespace GiaSu.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        [Display(Name = "Tài Khoản")]
+        public string TaiKhoan { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -42,25 +42,24 @@ namespace GiaSu.Models
     public class ForgotViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        [Display(Name = "Tài Khoản")]
+        public string TaiKhoan { get; set; }
     }
 
     public class LoginViewModel
     {
 
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Tài Khoản")]
+        public string TaiKhoan { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
+        [Display(Name = "Mật Khẩu")]
+        public string MatKhau { get; set; }
 
-        [Display(Name = "Remember me?")]
-        public bool RememberMe { get; set; }
+        [Display(Name = "Nhớ Tài Khoản")]
+        public bool NhoTK { get; set; }
     }
 
     public class RegisterViewModel
@@ -73,26 +72,25 @@ namespace GiaSu.Models
         [Required]
         [Display(Name = "Họ và tên")]
         public string HoTen { get; set; }
-
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-
+        [Required]
+        [Display(Name = "Tài Khoản")]
+        public string TaiKhoan { get; set; }
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
-
-
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
+        [Display(Name = "Mật Khẩu")]
+        public string MatKhau { get; set; }
+        //[DataType(DataType.Password)]
+        //[Display(Name = "Nhập Lại Mật Khẩu")]
+        //[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        //public string NhapLaiMK { get; set; }
         [Required]
-        [Display(Name = "Ngày Sinh")]
-        public string NgaySinh { get; set; }
+        [Display(Name = "Năm Sinh")]
+        public string NamSinh { get; set; }
         [Required]
         [Display(Name = "Giới Tính")]
         public string GioiTinh { get; set; }
@@ -117,19 +115,19 @@ namespace GiaSu.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        [Display(Name = "Tài Khoản")]
+        public string TaiKhoan { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
+        [Display(Name = "Mật Khẩu")]
+        public string MatKhau { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
+        [Display(Name = "Nhập Lại Mật Khẩu")]
+        [Compare("MatKhau", ErrorMessage = "The password and confirmation password do not match.")]
+        public string NhapLaiMK { get; set; }
 
         public string Code { get; set; }
     }
