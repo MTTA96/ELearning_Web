@@ -11,7 +11,7 @@ namespace WebELearning.Controllers
 {
     public class CoursesController : Controller
     {
-        private ApplicationDbContext _dbContext;
+        private readonly ApplicationDbContext _dbContext;
 
         public CoursesController()
         {
@@ -19,6 +19,7 @@ namespace WebELearning.Controllers
         }
 
         // GET: Corses
+        [Authorize]
         public ActionResult Create()
         {
             var viewModel = new CourseViewModel
@@ -27,8 +28,10 @@ namespace WebELearning.Controllers
             };
             return View(viewModel);
         }
+
         [Authorize]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(CourseViewModel viewModel)
         {
             if (!ModelState.IsValid)

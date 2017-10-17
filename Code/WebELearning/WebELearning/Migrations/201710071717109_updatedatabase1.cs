@@ -1,4 +1,4 @@
-namespace BigShool.Migrations
+namespace WebELearning.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
