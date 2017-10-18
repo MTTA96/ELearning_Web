@@ -16,6 +16,7 @@
     white-space: normal;
 }
 
+/*Navbar*/
 .navbar-inverse {
     background-color: dodgerblue;
     border-color: white;
@@ -28,6 +29,20 @@
 .navbar-inverse .navbar-brand {
    color: white;
 }
+
+/* Danh sách khóa học*/
+.khoa-hoc {
+    list-style:none;
+    background-color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+}
+
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,

@@ -4,10 +4,10 @@
 }
 
 <div class="row">
-    <ul class="khoa_hoc">
+    <ul class="danh-sach-khoa-hoc">
         @foreach(var khoaHoc in Model)
         {
-            <li>
+            <li class="khoa-hoc">
                 @khoaHoc.ThanhVien.Name
                 <br />@khoaHoc.Mon - @khoaHoc.DiaDiem
                 <br />Thời gian: @khoaHoc.Buoi.Name - @khoaHoc.Thu.Name
