@@ -1,0 +1,51 @@
+﻿@model ELearning.ViewModels.KhoaHocViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm("Create", "KhoaHoc"))
+{ 
+    @Html.AntiForgeryToken()
+    <!-- Môn-->
+    <div class="form-group">
+        @Html.LabelFor(m => m.Mon, "Môn")
+        @Html.TextBoxFor(m => m.Mon, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Mon)
+    </div>
+    <!-- Địa điểm -->
+    <div class="form-group">
+        @Html.LabelFor(m => m.DiaDiem, "Địa điểm")
+        @Html.TextBoxFor(m => m.DiaDiem, new { @class = "form-control"})
+        @Html.ValidationMessageFor(m => m.DiaDiem)
+    </div>
+    <!-- Buổi -->
+    <div class="form-group">
+        @Html.LabelFor(m => m.Buoi, "Buổi")
+        @Html.DropDownListFor(m => m.Buoi,
+       new SelectList(Model.DanhSachBuoi, "Id", "Name"), "", new { @class = "form-control"})
+        @Html.ValidationMessageFor(m => m.Buoi)
+    </div>
+    <!-- Thứ -->
+    <div class="form-group">
+        @Html.LabelFor(m => m.Thu, "Thứ")
+        @Html.DropDownListFor(m => m.Thu,
+       new SelectList(Model.DanhSachThu, "Id", "Name"), "", new { @class = "form-control" }) 
+        @Html.ValidationMessageFor(m => m.Thu)
+    </div>
+    <!-- Số buổi -->
+    <div class="form-group">
+        @Html.LabelFor(m => m.SoBuoi, "Số buổi")
+        @Html.TextBoxFor(m => m.SoBuoi, new { @class = "form-control"})
+        @Html.ValidationMessageFor(m => m.SoBuoi)
+    </div>
+    <!-- Học phí -->
+    <div class="form-group">
+        @Html.LabelFor(m => m.HocPhi, "Học phí")
+        @Html.TextBoxFor(m => m.HocPhi, new { @class = "form-control"})
+        @Html.ValidationMessageFor(m => m.HocPhi)
+    </div>
+    <button type="submit" value="Save" class="btn btn-primary">Tạo</button>
+}
+

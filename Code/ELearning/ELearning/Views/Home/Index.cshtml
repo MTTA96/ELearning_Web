@@ -1,0 +1,19 @@
+﻿@model IEnumerable<ELearning.Models.KhoaHoc>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <ul>
+        @foreach(var khoaHoc in Model)
+        {
+            <li>
+                @khoaHoc.ThanhVien.Name 
+                <br />@khoaHoc.Mon - @khoaHoc.DiaDiem
+                <br />Thời gian: @khoaHoc.Buoi.Name - @khoaHoc.Thu.Name
+                <br />Số buổi: @khoaHoc.SoBuoi
+                <br />Học phí: @khoaHoc.HocPhi
+            </li>
+        }
+    </ul>
+</div>
