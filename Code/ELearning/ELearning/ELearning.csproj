@@ -231,6 +231,10 @@
     <Compile Include="Migrations\201710201453327_AddIsCanceledColumnToCourse.Designer.cs">
       <DependentUpon>201710201453327_AddIsCanceledColumnToCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710220419201_addupdateuserinfo.cs" />
+    <Compile Include="Migrations\201710220419201_addupdateuserinfo.Designer.cs">
+      <DependentUpon>201710220419201_addupdateuserinfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -303,6 +307,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\KhoaHoc\Create.cshtml" />
     <Content Include="Views\KhoaHoc\KhoaHocCuaToi.cshtml" />
+    <Content Include="Views\Manage\CapNhatThongTin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -338,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710201453327_AddIsCanceledColumnToCourse.resx">
       <DependentUpon>201710201453327_AddIsCanceledColumnToCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710220419201_addupdateuserinfo.resx">
+      <DependentUpon>201710220419201_addupdateuserinfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

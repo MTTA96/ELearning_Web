@@ -13,6 +13,14 @@ namespace ELearning.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+        [Required]
+        public string Address { get; set; }
+        [Required]
+        public string NamSinh { get; set; }
+        [Required]
+        public string NgheNghiep { get; set; }
+        [Required]
+        public string BangCap { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

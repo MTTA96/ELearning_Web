@@ -113,4 +113,27 @@ namespace ELearning.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
+    public class CapNhatThongTinViewModel
+    {
+        [Required]
+        [StringLength(255)]
+        [Display(Name = "Họ Tên")]
+        public string Name { get; set; }
+
+        [Required]
+        [Display(Name = "Địa Chỉ")]
+        public string Address { get; set; }
+        [Required]
+        [Display(Name = "Năm Sinh")]
+        public string NamSinh { get; set; }
+        [Required]
+        [Display(Name = "Nghề Nghiệp")]
+        public string NgheNghiep { get; set; }
+        [Required]
+        [Display(Name = "SĐT")]
+        public string SDT { get; set; }
+        [Required]
+        [Display(Name = "Bằng Cấp")]
+        public string BangCap { get; set; }
+    }
 }
