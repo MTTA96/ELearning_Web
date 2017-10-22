@@ -70,7 +70,6 @@ namespace ELearning.Models
         public string Email { get; set; }
 
         [Required]
-        [EmailAddress]
         [Display(Name = "Tên")]
         public string Name { get; set; }
 

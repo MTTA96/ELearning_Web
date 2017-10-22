@@ -42,6 +42,14 @@
     border-color: black;
 }
 
+.khoa-hoc > li .action{
+    display:none;
+    left: 70px;
+    position: absolute;
+}
+.khoa-hoc > li:hover .action{
+    display: block;
+}
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,

@@ -20,6 +20,7 @@ namespace ELearning.Controllers
         public ActionResult Index()
         {
             var danhSachKhoaHoc = _dbContext.DanhSachKhoaHoc
+                .Where(c => !c.IsCanceled)
                 .Include(c => c.ThanhVien)
                 .Include(c => c.Buoi)
                 .Include(c => c.Thu);

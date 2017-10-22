@@ -9,6 +9,7 @@ namespace ELearning.ViewModels
 {
     public class KhoaHocViewModel
     {
+        public int Id { get; set; }
         [Required]
         public string Mon { get; set; }
 
@@ -27,5 +28,11 @@ namespace ELearning.ViewModels
         public byte Thu { get; set; }
         public IEnumerable<Buoi> DanhSachBuoi { get; set; }
         public IEnumerable<Thu> DanhSachThu { get; set; }
+
+        public string Heading { get; set; }
+        public string Action
+        {
+            get { return (Id != 0) ? "CapNhatKhoaHoc" : "Create"; }
+        }
     }
 }

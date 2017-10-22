@@ -5,9 +5,10 @@
 }
 
 <h2>Create</h2>
-@using (Html.BeginForm("Create", "KhoaHoc"))
+@using (Html.BeginForm(Model.Action, "KhoaHoc"))
 { 
     @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
     <!-- Môn-->
     <div class="form-group">
         @Html.LabelFor(m => m.Mon, "Môn")

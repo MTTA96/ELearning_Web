@@ -9,6 +9,9 @@ namespace ELearning.Models
     public class KhoaHoc
     {
         public int Id { get; set; }
+
+        public bool IsCanceled { get; set; }
+
         public ApplicationUser ThanhVien { get; set; }
 
         [Required]
