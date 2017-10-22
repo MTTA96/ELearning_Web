@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ELearning.Models.KhoaHoc>
+
+@{
+    ViewBag.Title = "KhoaHocCuaToi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Khóa học của tôi</h2>
+<ul>
+    @foreach(var khoaHoc in Model)
+    {
+        <li class="khoa-hoc">
+            @khoaHoc.ThanhVien.Name
+            <br />@khoaHoc.Mon - @khoaHoc.DiaDiem
+            <br />Thời gian: @khoaHoc.Buoi.Name - @khoaHoc.Thu.Name
+            <br />Số buổi: @khoaHoc.SoBuoi
+            <br />Học phí: @khoaHoc.HocPhi
+            <div class="action">
+                <a href="@Url.Action("SuaKhoaHoc","KhoaHoc", new { id = khoaHoc.Id })">Sửa</a>
+                <a href="#" class="js-huykhoahoc-khoahoc" data-khoa-hoc-id="@khoaHoc.Id">Xóa</a>
+            </div>
+        </li>
+    }
+</ul>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $(".js-huykhoahoc-khoahoc").click(function (e) {
+                e.preventDefault();
+                var link = $(e.target);
+                bootbox.confirm("Bạn có chắc muốn xóa?",
+                    function () {
+                        $.ajax({
+                            url: "/api/khoahoc/" + link.attr("data-khoa-hoc-id"),
+                            method: "DELETE"
+                        })
+                            .done(function () {
+                                link.parents("li").fadeOut(function () {
+                                    $(this).remove();
+                                });
+                            })
+                            .fail(function () {
+                                alert("Something failed!");
+                            });
+                    });
+            });
+        });
+    </script>    
+}
+

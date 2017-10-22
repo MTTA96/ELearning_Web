@@ -21,11 +21,15 @@ namespace ELearning.Controllers
         {
             var viewModel = new KhoaHocViewModel
             {
-                DanhSachBuoi = _dbContext.DanhSachBuoi.ToList(),
-                DanhSachThu = _dbContext.DanhSachThu.ToList()
+                DanhSachBuoi = _dbContext.DanhSachBuoi.ToList()
+                //DanhSachThu = _dbContext.DanhSachThu.ToList()
             };
-            var listCourse = from kh in _dbContext.DanhSachKhoaHoc select kh;
-            ViewBag.Search = listCourse;
+            var danhSachKhoaHoc = _dbContext.DanhSachKhoaHoc
+                .Where(c => !c.IsCanceled)
+                .Include(c => c.ThanhVien)
+                .Include(c => c.Buoi)
+                .Include(c => c.Thu);
+            ViewBag.Search = danhSachKhoaHoc;
             return View(viewModel);
         }
         [HttpPost]
@@ -33,22 +37,23 @@ namespace ELearning.Controllers
         {
             var viewModel = new KhoaHocViewModel
             {
-                DanhSachBuoi = _dbContext.DanhSachBuoi.ToList(),
-                DanhSachThu = _dbContext.DanhSachThu.ToList()
+                DanhSachBuoi = _dbContext.DanhSachBuoi.ToList()
+                //DanhSachThu = _dbContext.DanhSachThu.ToList()
             };
             var khoaHoc = new KhoaHoc
             {
-                BuoiId = khoaHocViewModel.Buoi ,
-                ThuId = khoaHocViewModel.Thu
+                BuoiId = khoaHocViewModel.Buoi 
+                //ThuId = khoaHocViewModel.Thu
           
             };
 
-            var listSearch = from kh in _dbContext.DanhSachKhoaHoc select kh;
-            if (!String.IsNullOrEmpty(searchKey) || khoaHoc.BuoiId != null)
-            {
-                listSearch = listSearch.Where(kh => kh.Mon.Contains(searchKey)).Where(kh=>kh.BuoiId==khoaHoc.BuoiId).Where(kh=>kh.ThuId==khoaHoc.ThuId);
-            }
-            ViewBag.Search = listSearch;
+            var danhSachKhoaHoc = _dbContext.DanhSachKhoaHoc
+               .Where(c => !c.IsCanceled)
+               .Include(c => c.ThanhVien)
+               .Include(c => c.Buoi)
+               .Include(c => c.Thu).Where(kh => kh.Mon.Contains(searchKey)).Where(kh => kh.BuoiId == khoaHoc.BuoiId);
+            
+            ViewBag.Search = danhSachKhoaHoc;
             return View(viewModel);
         }
         
