@@ -25,7 +25,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Buoi, "Buổi")
         @Html.DropDownListFor(m => m.Buoi,
-       new SelectList(Model.DanhSachBuoi, "Id", "Name"), "", new { @class = "form-control"})
+        new SelectList(Model.DanhSachBuoi, "Id", "Name"), "", new { @class = "form-control"})
         @Html.ValidationMessageFor(m => m.Buoi)
     </div>
     <!-- Thứ -->

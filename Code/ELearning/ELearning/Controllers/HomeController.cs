@@ -5,28 +5,58 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using ELearning.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace ELearning.Controllers
 {
     public class HomeController : Controller
     {
         private ApplicationDbContext _dbContext;
-
         public HomeController()
         {
             _dbContext = new ApplicationDbContext();
         }
-
         public ActionResult Index()
         {
+            var viewModel = new KhoaHocViewModel
+            {
+                DanhSachBuoi = _dbContext.DanhSachBuoi.ToList()
+                //DanhSachThu = _dbContext.DanhSachThu.ToList()
+            };
             var danhSachKhoaHoc = _dbContext.DanhSachKhoaHoc
                 .Where(c => !c.IsCanceled)
                 .Include(c => c.ThanhVien)
                 .Include(c => c.Buoi)
                 .Include(c => c.Thu);
-
-            return View(danhSachKhoaHoc);
+            ViewBag.Search = danhSachKhoaHoc;
+            return View(viewModel);
         }
+        [HttpPost]
+        public ActionResult Index(KhoaHocViewModel khoaHocViewModel,string searchKey)
+        {
+            var viewModel = new KhoaHocViewModel
+            {
+                DanhSachBuoi = _dbContext.DanhSachBuoi.ToList()
+                //DanhSachThu = _dbContext.DanhSachThu.ToList()
+            };
+            var khoaHoc = new KhoaHoc
+            {
+                BuoiId = khoaHocViewModel.Buoi 
+                //ThuId = khoaHocViewModel.Thu
+          
+            };
+
+            var danhSachKhoaHoc = _dbContext.DanhSachKhoaHoc
+               .Where(c => !c.IsCanceled)
+               .Include(c => c.ThanhVien)
+               .Include(c => c.Buoi)
+               .Include(c => c.Thu).Where(kh => kh.Mon.Contains(searchKey)).Where(kh => kh.BuoiId == khoaHoc.BuoiId);
+            
+            ViewBag.Search = danhSachKhoaHoc;
+            return View(viewModel);
+        }
+        
 
         public ActionResult About()
         {

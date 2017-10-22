@@ -240,6 +240,7 @@
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Buoi.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Filter.cs" />
     <Compile Include="Models\KhoaHoc.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Thu.cs" />

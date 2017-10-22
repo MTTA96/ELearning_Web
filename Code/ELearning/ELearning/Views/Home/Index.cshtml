@@ -1,19 +1,34 @@
-﻿@model IEnumerable<ELearning.Models.KhoaHoc>
+﻿@model ELearning.ViewModels.KhoaHocViewModel
+
 @{
     ViewBag.Title = "Home Page";
 }
 
+@using (Html.BeginForm("Index", "Home"))
+{
 <div class="row">
-    <ul class="danh-sach-khoa-hoc">
-        @foreach(var khoaHoc in Model)
-        {
-            <li class="khoa-hoc">
-                @khoaHoc.ThanhVien.Name
-                <br />@khoaHoc.Mon - @khoaHoc.DiaDiem
-                <br />Thời gian: @khoaHoc.Buoi.Name - @khoaHoc.Thu.Name
-                <br />Số buổi: @khoaHoc.SoBuoi
-                <br />Học phí: @khoaHoc.HocPhi
-            </li>
-        }
-    </ul>
+    <p>
+        <div>
+            Find by name: @Html.TextBox("searchKey", "", new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.Buoi, new SelectList(Model.DanhSachBuoi, "Id", "Name"), "", new { @class = "form-control" })
+            @*@Html.DropDownListFor(m => m.Buoi, new SelectList(Model.DanhSachThu, "Id", "Name"), "", new { @class = "form-control" })*@
+            <button type="submit" value="Search" class="btn btn-primary">Tìm</button>
+        </div>
+        <br />
+        
+        <br />
+        <ul class="danh-sach-khoa-hoc">
+            @foreach (var khoaHoc in ViewBag.Search)
+            {
+                <li class="khoa-hoc">
+                    @khoaHoc.ThanhVien.Name
+                    <br />@khoaHoc.Mon - @khoaHoc.DiaDiem
+                    <br />Thời gian: @khoaHoc.Buoi.Name - @khoaHoc.Thu.Name
+                    <br />Số buổi: @khoaHoc.SoBuoi
+                    <br />Học phí: @khoaHoc.HocPhi
+                </li>
+            }
+        </ul>
+    </p>
 </div>
+}
