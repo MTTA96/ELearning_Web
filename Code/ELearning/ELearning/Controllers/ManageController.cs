@@ -341,17 +341,32 @@ namespace ELearning.Controllers
         [HttpPost]
         public async Task<ActionResult> CapNhatThongTin(ApplicationUser model)
         {
+            //if (ModelState.IsValid)
+            //{
+            //    var user = model;
+            //    var store = new UserStore<ApplicationUser>(new ApplicationDbContext());
+            //    var manager = new ApplicationUserManager(store);
+            //    store.Context.SaveChanges();
+            //        return RedirectToAction("Index", "Home");
+
+            //}
+
+            //// If we got this far, something failed, redisplay form
+            //return View(model);
             if (ModelState.IsValid)
             {
-                var user =model;
-                var store = new UserStore<ApplicationUser>(new ApplicationDbContext());
-                var manager = new ApplicationUserManager(store);
-                store.Context.SaveChanges();
-                    return RedirectToAction("Index", "Home");
+                ApplicationUser user = UserManager.FindById(model.Id);
+                user.UserName = model.Email;
+                user.Email = model.Email;
+                user.Address = model.Address; // Extra Property
+                user.BangCap = model.BangCap;
+                user.PhoneNumber = model.PhoneNumber;
+                user.NgheNghiep = model.NgheNghiep;
+                user.NamSinh = model.NamSinh;
 
+                IdentityResult result = await UserManager.UpdateAsync(user);
+                return RedirectToAction("Index", "Home");
             }
-
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
 

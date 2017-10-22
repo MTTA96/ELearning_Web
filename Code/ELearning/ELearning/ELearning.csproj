@@ -235,6 +235,10 @@
     <Compile Include="Migrations\201710220419201_addupdateuserinfo.Designer.cs">
       <DependentUpon>201710220419201_addupdateuserinfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710220603521_UpdateUnknowUser.cs" />
+    <Compile Include="Migrations\201710220603521_UpdateUnknowUser.Designer.cs">
+      <DependentUpon>201710220603521_UpdateUnknowUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -347,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710220419201_addupdateuserinfo.resx">
       <DependentUpon>201710220419201_addupdateuserinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710220603521_UpdateUnknowUser.resx">
+      <DependentUpon>201710220603521_UpdateUnknowUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
