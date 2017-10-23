@@ -123,5 +123,24 @@ namespace ELearning.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        //Khóa học đã đăng ký
+        //[Authorize]
+        //public ActionResult Attending()
+        //{
+        //    var userId = User.Identity.GetUserId();
+
+        //    var khoaHoc = _dbContext.Attendances
+        //        .Where(a => a.AttendeeId == userId)
+        //        .Select(a => a.KhoaHoc)
+        //        .Include(l => l.ThanhVien)
+        //        .Include(l => l.Buoi)
+        //        .Include(l => l.Thu)
+        //        .ToList();
+
+        //    var viewModel = new KhoaHocViewModel
+        //    {
+        //    }
+        //}
     }
 }

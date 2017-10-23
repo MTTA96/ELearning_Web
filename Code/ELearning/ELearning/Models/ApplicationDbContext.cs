@@ -12,6 +12,7 @@ namespace ELearning.Models
         public DbSet<KhoaHoc> DanhSachKhoaHoc { get; set; }
         public DbSet<Buoi> DanhSachBuoi { get; set; }
         public DbSet<Thu> DanhSachThu { get; set; }
+        public DbSet<Attendance> Attendances { get; set; }
 
         public ApplicationDbContext()
             : base("ELearningConnection", throwIfV1Schema: false)
@@ -21,6 +22,15 @@ namespace ELearning.Models
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Attendance>()
+                .HasRequired(a => a.KhoaHoc)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

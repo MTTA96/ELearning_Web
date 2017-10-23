@@ -21,14 +21,40 @@
             @foreach (var khoaHoc in ViewBag.Search)
             {
                 <li class="khoa-hoc">
-                    @khoaHoc.ThanhVien.Name
-                    <br />@khoaHoc.Mon - @khoaHoc.DiaDiem
-                    <br />Thời gian: @khoaHoc.Buoi.Name - @khoaHoc.Thu.Name
-                    <br />Số buổi: @khoaHoc.SoBuoi
-                    <br />Học phí: @khoaHoc.HocPhi
+                    <div>
+                        @khoaHoc.ThanhVien.Name
+                        <br />@khoaHoc.Mon - @khoaHoc.DiaDiem
+                        <br />Thời gian: @khoaHoc.Buoi.Name - @khoaHoc.Thu.Name
+                        <br />Số buổi: @khoaHoc.SoBuoi
+                        <br />Học phí: @khoaHoc.HocPhi
+                        <button data-course-id="@khoaHoc.Id" class="btn btn-default btn-sm js-toggle-attendance">Đăng ký</button>
+                    </div>
                 </li>
             }
         </ul>
     </p>
 </div>
+}
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $(".js-toggle-attendance").click(function (e) {
+                var button = $(e.target);
+                $.post("/api/attendances", { khoaHocId: button.attr("data-course-id") })
+                //$.ajax({
+                //    url: "/api/attendances" + { khoaHocId: button.attr("data-course-id") },
+                //    method: "POST"
+                //})
+                    .done(function () {
+                        button
+                            .removeClass("btn-default")
+                            .addClass("btn-info")
+                            .text("Đăng ký");
+                    })
+                    .fail(function () {
+                        alert("Lỗi!");
+                    });
+            });
+        });
+    </script>
 }
