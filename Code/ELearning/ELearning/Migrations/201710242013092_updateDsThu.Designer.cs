@@ -7,13 +7,13 @@ namespace ELearning.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ThemTenTableThanhVien : IMigrationMetadata
+    public sealed partial class updateDsThu : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ThemTenTableThanhVien));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updateDsThu));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710181349137_ThemTenTableThanhVien"; }
+            get { return "201710242013092_updateDsThu"; }
         }
         
         string IMigrationMetadata.Source

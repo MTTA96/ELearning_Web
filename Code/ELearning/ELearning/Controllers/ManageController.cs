@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ELearning.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ELearning.Controllers
 {
@@ -333,7 +334,29 @@ namespace ELearning.Controllers
             base.Dispose(disposing);
         }
 
-#region Helpers
+        public ActionResult CapNhatThongTin()
+        {
+            var user = UserManager.FindById(User.Identity.GetUserId());
+            return View(user);
+        }
+        [HttpPost]
+        public async Task<ActionResult> CapNhatThongTin(ApplicationUser model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = model;
+                var store = new UserStore<ApplicationUser>(new ApplicationDbContext());
+                var manager = new ApplicationUserManager(store);
+                store.Context.SaveChanges();
+                return RedirectToAction("Index", "Home");
+
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+        #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 

@@ -1,4 +1,4 @@
-﻿@model ELearning.ViewModels.KhoaHocViewModel
+﻿@model ELearning.ViewModels.DanhSachKhoaHocViewModel
 
 @{
     ViewBag.Title = "Home Page";
@@ -6,31 +6,51 @@
 
 @using (Html.BeginForm("Index", "Home"))
 {
-    <span class="">
-        Tìm theo tên: @Html.TextBox("searchKey", "",new {@class="search-name" })
-        <button type="submit" value="Search" class="btn btn-primary">Tìm</button>
-    </span>
-    <br />
-    @Html.DropDownListFor(m => m.DiaDiem, new SelectList(Model.DanhSachDiaDiem, "Id", "Name"), "Địa điểm", new { @class = "search-droplist" })
-    @Html.DropDownListFor(m => m.Buoi, new SelectList(Model.DanhSachBuoi, "Id", "Name"), "Buổi",new { @class="search-droplist"})
-    @Html.TextBoxFor(m=>m.HocPhi, new { @class = "search-droplist" })
-
-
-<div class="row">
+    <div class="row">
+        <span class="">
+            Tìm theo tên: @Html.TextBox("searchKey", "", new { @class = "search-name" })
+            <button type="submit" value="Search" class="btn btn-primary">Tìm</button>
+        </span>
         <br />
-        
+        @Html.DropDownListFor(m => m.DiaDiem, new SelectList(Model.DanhSachDiaDiem, "Id", "Name"), "Địa điểm", new { @class = "search-droplist" })
+        @Html.DropDownListFor(m => m.Buoi, new SelectList(Model.DanhSachBuoi, "Id", "Name"), "Buổi", new { @class = "search-droplist" })
+        @Html.TextBoxFor(m => m.HocPhi, new { @class = "search-droplist" })
+        <br />
         <br />
         <ul class="danh-sach-khoa-hoc">
-            @foreach (var khoaHoc in ViewBag.Search)
+            @foreach (var khoaHoc in Model.UpCommingCourses)
             {
                 <li class="khoa-hoc">
-                    @khoaHoc.ThanhVien.Name
-                    <br />@khoaHoc.Mon - @khoaHoc.DiaDiem.Name
-                    <br />Thời gian: @khoaHoc.Buoi.Name - @khoaHoc.Thu.Name
-                    <br />Số buổi: @khoaHoc.SoBuoi
-                    <br />Học phí: @khoaHoc.HocPhi
+                    <div>
+                        @khoaHoc.ThanhVien.Name
+                        <br />@khoaHoc.Mon - @khoaHoc.DiaDiem.Name
+                        <br />Thời gian: @khoaHoc.Buoi.Name - @khoaHoc.Thu.Name
+                        <br />Số buổi: @khoaHoc.SoBuoi
+                        <br />Học phí: @khoaHoc.HocPhi
+                        <br />
+                        <button data-course-id="@khoaHoc.Id" class="btn btn-default btn-sm js-toggle-attendance">Đăng ký</button>
+                    </div>
                 </li>
             }
         </ul>
-</div>
+    </div>
+}
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $(".js-toggle-attendance").click(function (e) {
+                var button = $(e.target);
+                $.post("/api/attendances", { khoaHocId: button.attr("data-course-id") })
+                    .done(function () {
+                        button
+                            .removeClass("btn-default")
+                            .addClass("btn-info")
+                            .text("Đăng ký");
+                    })
+                    .fail(function () {
+                        alert("Lỗi!");
+                    });
+            });
+        });
+    </script>
 }

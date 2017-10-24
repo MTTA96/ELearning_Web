@@ -3,7 +3,7 @@ namespace ELearning.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class KhoiTaoTableThu : DbMigration
+    public partial class updateDsThu : DbMigration
     {
         public override void Up()
         {

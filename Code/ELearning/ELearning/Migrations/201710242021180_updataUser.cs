@@ -3,16 +3,16 @@ namespace ELearning.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddIsCanceledColumnToCourse : DbMigration
+    public partial class updataUser : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.KhoaHocs", "IsCanceled", c => c.Boolean(nullable: false));
+            AlterColumn("dbo.AspNetUsers", "Address", c => c.String());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.KhoaHocs", "IsCanceled");
+            AlterColumn("dbo.AspNetUsers", "Address", c => c.String(nullable: false));
         }
     }
 }

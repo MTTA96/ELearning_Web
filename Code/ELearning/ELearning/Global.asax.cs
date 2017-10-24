@@ -14,6 +14,7 @@ namespace ELearning
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            //WebApiConfig.Register(GlobalConfiguration.Configuration);
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -7,13 +7,13 @@ namespace ELearning.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class TaoTableKhoaHoc : IMigrationMetadata
+    public sealed partial class updataUser : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(TaoTableKhoaHoc));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updataUser));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710181021252_TaoTableKhoaHoc"; }
+            get { return "201710242021180_updataUser"; }
         }
         
         string IMigrationMetadata.Source
