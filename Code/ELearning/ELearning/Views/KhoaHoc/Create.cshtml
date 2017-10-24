@@ -18,7 +18,8 @@
     <!-- Địa điểm -->
     <div class="form-group">
         @Html.LabelFor(m => m.DiaDiem, "Địa điểm")
-        @Html.TextBoxFor(m => m.DiaDiem, new { @class = "form-control"})
+        @Html.DropDownListFor(m => m.DiaDiem,
+        new SelectList(Model.DanhSachDiaDiem, "Id", "Name"), "", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.DiaDiem)
     </div>
     <!-- Buổi -->

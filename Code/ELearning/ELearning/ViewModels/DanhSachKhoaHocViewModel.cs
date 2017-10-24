@@ -9,6 +9,9 @@ namespace ELearning.ViewModels
 {
     public class DanhSachKhoaHocViewModel
     {
+        public byte DiaDiem { get; set; }
+        [Required]
+        public double HocPhi { get; set; }
         [Required]
         public byte Buoi { get; set; }
         [Required]
@@ -16,6 +19,7 @@ namespace ELearning.ViewModels
         public IEnumerable<Buoi> DanhSachBuoi { get; set; }
         public IEnumerable<Thu> DanhSachThu { get; set; }
         public IEnumerable<KhoaHoc> UpCommingCourses { get; set; }
+        public IEnumerable<DiaDiem> DanhSachDiaDiem { get; set; }
         public bool ShowAction { get; set; }
     }
 }

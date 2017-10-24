@@ -113,6 +113,7 @@ namespace ELearning.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
+
     public class CapNhatThongTinViewModel
     {
         [Required]
@@ -136,4 +137,5 @@ namespace ELearning.Models
         [Display(Name = "Bằng Cấp")]
         public string BangCap { get; set; }
     }
+
 }

@@ -7,14 +7,15 @@
 @using (Html.BeginForm("Index", "Home"))
 {
 <div class="row">
-        <div>
-            Find by name: @Html.TextBox("searchKey", "", new { @class = "form-control" })
-            @Html.DropDownListFor(m => m.Buoi, new SelectList(Model.DanhSachBuoi, "Id", "Name"), "", new { @class = "form-control" })
-            @*@Html.DropDownListFor(m => m.Buoi, new SelectList(Model.DanhSachThu, "Id", "Name"), "", new { @class = "form-control" })*@
-            <button type="submit" value="Search" class="btn btn-primary">Tìm</button>
-        </div>
+        <span class="">
+        Tìm theo tên: @Html.TextBox("searchKey", "", new { @class = "search-name" })
+        <button type="submit" value="Search" class="btn btn-primary">Tìm</button>
+        </span>
         <br />
-        
+        @Html.DropDownListFor(m => m.DiaDiem, new SelectList(Model.DanhSachDiaDiem, "Id", "Name"), "Địa điểm", new { @class = "search-droplist" })
+        @Html.DropDownListFor(m => m.Buoi, new SelectList(Model.DanhSachBuoi, "Id", "Name"), "Buổi", new { @class = "search-droplist" })
+        @Html.TextBoxFor(m => m.HocPhi, new { @class = "search-droplist" })
+        <br />
         <br />
         <ul class="danh-sach-khoa-hoc">
             @foreach (var khoaHoc in Model.UpCommingCourses)

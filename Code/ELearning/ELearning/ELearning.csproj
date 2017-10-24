@@ -209,41 +209,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710181007364_InitialModel.cs" />
-    <Compile Include="Migrations\201710181007364_InitialModel.Designer.cs">
-      <DependentUpon>201710181007364_InitialModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710181021252_TaoTableKhoaHoc.cs" />
-    <Compile Include="Migrations\201710181021252_TaoTableKhoaHoc.Designer.cs">
-      <DependentUpon>201710181021252_TaoTableKhoaHoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710181023458_KhoiTaoTableBuoi.cs" />
-    <Compile Include="Migrations\201710181023458_KhoiTaoTableBuoi.Designer.cs">
-      <DependentUpon>201710181023458_KhoiTaoTableBuoi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710181027075_KhoiTaoTableThu.cs" />
-    <Compile Include="Migrations\201710181027075_KhoiTaoTableThu.Designer.cs">
-      <DependentUpon>201710181027075_KhoiTaoTableThu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710181349137_ThemTenTableThanhVien.cs" />
-    <Compile Include="Migrations\201710181349137_ThemTenTableThanhVien.Designer.cs">
-      <DependentUpon>201710181349137_ThemTenTableThanhVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710201453327_AddIsCanceledColumnToCourse.cs" />
-    <Compile Include="Migrations\201710201453327_AddIsCanceledColumnToCourse.Designer.cs">
-      <DependentUpon>201710201453327_AddIsCanceledColumnToCourse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710220419201_addupdateuserinfo.cs" />
-    <Compile Include="Migrations\201710220419201_addupdateuserinfo.Designer.cs">
-      <DependentUpon>201710220419201_addupdateuserinfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710220603521_UpdateUnknowUser.cs" />
-    <Compile Include="Migrations\201710220603521_UpdateUnknowUser.Designer.cs">
-      <DependentUpon>201710220603521_UpdateUnknowUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710221517046_AddAttendance.cs" />
-    <Compile Include="Migrations\201710221517046_AddAttendance.Designer.cs">
-      <DependentUpon>201710221517046_AddAttendance.cs</DependentUpon>
+    <Compile Include="Migrations\201710241853271_Update.cs" />
+    <Compile Include="Migrations\201710241853271_Update.Designer.cs">
+      <DependentUpon>201710241853271_Update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -251,7 +219,7 @@
     <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Buoi.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
-    <Compile Include="Models\Filter.cs" />
+    <Compile Include="Models\DiaDiem.cs" />
     <Compile Include="Models\KhoaHoc.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Thu.cs" />
@@ -320,8 +288,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\KhoaHoc\Create.cshtml" />
     <Content Include="Views\KhoaHoc\KhoaHocCuaToi.cshtml" />
-    <Content Include="Views\Manage\CapNhatThongTin.cshtml" />
     <Content Include="Views\KhoaHoc\Attending.cshtml" />
+    <Content Include="Views\Manage\CapNhatThongTin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -340,32 +308,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710181007364_InitialModel.resx">
-      <DependentUpon>201710181007364_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710181021252_TaoTableKhoaHoc.resx">
-      <DependentUpon>201710181021252_TaoTableKhoaHoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710181023458_KhoiTaoTableBuoi.resx">
-      <DependentUpon>201710181023458_KhoiTaoTableBuoi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710181027075_KhoiTaoTableThu.resx">
-      <DependentUpon>201710181027075_KhoiTaoTableThu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710181349137_ThemTenTableThanhVien.resx">
-      <DependentUpon>201710181349137_ThemTenTableThanhVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710201453327_AddIsCanceledColumnToCourse.resx">
-      <DependentUpon>201710201453327_AddIsCanceledColumnToCourse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710220419201_addupdateuserinfo.resx">
-      <DependentUpon>201710220419201_addupdateuserinfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710220603521_UpdateUnknowUser.resx">
-      <DependentUpon>201710220603521_UpdateUnknowUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710221517046_AddAttendance.resx">
-      <DependentUpon>201710221517046_AddAttendance.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710241853271_Update.resx">
+      <DependentUpon>201710241853271_Update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

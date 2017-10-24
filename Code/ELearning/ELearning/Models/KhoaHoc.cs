@@ -21,8 +21,8 @@ namespace ELearning.Models
         public string Mon { get; set; }
 
         [Required]
-        [StringLength(255)]
-        public string DiaDiem { get; set; }
+        public byte DiaDiemId { get; set; }
+        public DiaDiem DiaDiem { get; set; }
 
         public DateTime NgayDang { get; set; }
 
