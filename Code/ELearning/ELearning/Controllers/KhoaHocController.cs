@@ -27,6 +27,7 @@ namespace ELearning.Controllers
             {
                 DanhSachBuoi = _dbContext.DanhSachBuoi.ToList(),
                 DanhSachThu = _dbContext.DanhSachThu.ToList(),
+                DanhSachDiaDiem=_dbContext.DanhSachDiaDiem.ToList(),
                 Heading = "Them Khoa Hoc"
             };
             return View(viewModel);
@@ -47,7 +48,7 @@ namespace ELearning.Controllers
                 ThanhVienId = User.Identity.GetUserId(),
                 Mon = viewModel.Mon,
                 NgayDang = DateTime.Now,
-                DiaDiem = viewModel.DiaDiem,
+                DiaDiemId = viewModel.DiaDiem,
                 BuoiId = viewModel.Buoi,
                 ThuId = viewModel.Thu,
                 SoBuoi = viewModel.SoBuoi,
@@ -82,7 +83,7 @@ namespace ELearning.Controllers
             var viewModel = new KhoaHocViewModel
             {
                 Mon = khoaHoc.Mon,
-                DiaDiem = khoaHoc.DiaDiem,
+                DiaDiem = khoaHoc.DiaDiemId,
                 Buoi = khoaHoc.BuoiId,
                 Thu = khoaHoc.ThuId,
                 SoBuoi = khoaHoc.SoBuoi,
@@ -113,7 +114,7 @@ namespace ELearning.Controllers
             var khoaHoc = _dbContext.DanhSachKhoaHoc.Single(c => c.Id == viewModel.Id && c.ThanhVienId == thanhVienId);
 
             khoaHoc.Mon = viewModel.Mon;
-            khoaHoc.DiaDiem = viewModel.DiaDiem;
+            khoaHoc.DiaDiemId = viewModel.DiaDiem;
             khoaHoc.BuoiId = viewModel.Buoi;
             khoaHoc.ThuId = viewModel.Thu;
             khoaHoc.SoBuoi = viewModel.SoBuoi;

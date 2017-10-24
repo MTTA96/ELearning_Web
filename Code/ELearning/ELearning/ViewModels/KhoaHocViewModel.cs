@@ -14,7 +14,7 @@ namespace ELearning.ViewModels
         public string Mon { get; set; }
 
         [Required]
-        public string DiaDiem { get; set; }
+        public byte DiaDiem { get; set; }
 
         [Required]
         public int SoBuoi { get; set; }
@@ -28,6 +28,7 @@ namespace ELearning.ViewModels
         public byte Thu { get; set; }
         public IEnumerable<Buoi> DanhSachBuoi { get; set; }
         public IEnumerable<Thu> DanhSachThu { get; set; }
+        public IEnumerable<DiaDiem> DanhSachDiaDiem { get; set; }
 
         public string Heading { get; set; }
         public string Action

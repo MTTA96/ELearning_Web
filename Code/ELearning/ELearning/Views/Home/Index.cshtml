@@ -6,14 +6,16 @@
 
 @using (Html.BeginForm("Index", "Home"))
 {
+    <span class="">
+        Tìm theo tên: @Html.TextBox("searchKey", "",new {@class="search-name" })
+        <button type="submit" value="Search" class="btn btn-primary">Tìm</button>
+    </span>
+    <br />
+    @Html.DropDownListFor(m => m.DiaDiem, new SelectList(Model.DanhSachDiaDiem, "Id", "Name"), "Địa điểm", new { @class = "search-droplist" })
+    @Html.DropDownListFor(m => m.Buoi, new SelectList(Model.DanhSachBuoi, "Id", "Name"), "Buổi",new { @class="search-droplist"})
+        
+    
 <div class="row">
-    <p>
-        <div>
-            Find by name: @Html.TextBox("searchKey", "", new { @class = "form-control" })
-            @Html.DropDownListFor(m => m.Buoi, new SelectList(Model.DanhSachBuoi, "Id", "Name"), "", new { @class = "form-control" })
-            @*@Html.DropDownListFor(m => m.Buoi, new SelectList(Model.DanhSachThu, "Id", "Name"), "", new { @class = "form-control" })*@
-            <button type="submit" value="Search" class="btn btn-primary">Tìm</button>
-        </div>
         <br />
         
         <br />
@@ -22,13 +24,12 @@
             {
                 <li class="khoa-hoc">
                     @khoaHoc.ThanhVien.Name
-                    <br />@khoaHoc.Mon - @khoaHoc.DiaDiem
+                    <br />@khoaHoc.Mon - @khoaHoc.DiaDiem.Name
                     <br />Thời gian: @khoaHoc.Buoi.Name - @khoaHoc.Thu.Name
                     <br />Số buổi: @khoaHoc.SoBuoi
                     <br />Học phí: @khoaHoc.HocPhi
                 </li>
             }
         </ul>
-    </p>
 </div>
 }

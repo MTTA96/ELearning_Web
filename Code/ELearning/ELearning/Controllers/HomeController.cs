@@ -21,8 +21,9 @@ namespace ELearning.Controllers
         {
             var viewModel = new KhoaHocViewModel
             {
-                DanhSachBuoi = _dbContext.DanhSachBuoi.ToList()
-                //DanhSachThu = _dbContext.DanhSachThu.ToList()
+                DanhSachBuoi = _dbContext.DanhSachBuoi.ToList(),
+                DanhSachDiaDiem = _dbContext.DanhSachDiaDiem.ToList(),
+                DanhSachThu = _dbContext.DanhSachThu.ToList()
             };
             var danhSachKhoaHoc = _dbContext.DanhSachKhoaHoc
                 .Where(c => !c.IsCanceled)
@@ -37,21 +38,23 @@ namespace ELearning.Controllers
         {
             var viewModel = new KhoaHocViewModel
             {
-                DanhSachBuoi = _dbContext.DanhSachBuoi.ToList()
-                //DanhSachThu = _dbContext.DanhSachThu.ToList()
+                DanhSachBuoi = _dbContext.DanhSachBuoi.ToList(),
+                DanhSachThu = _dbContext.DanhSachThu.ToList(),
+                DanhSachDiaDiem=_dbContext.DanhSachDiaDiem.ToList()
             };
             var khoaHoc = new KhoaHoc
             {
-                BuoiId = khoaHocViewModel.Buoi 
-                //ThuId = khoaHocViewModel.Thu
-          
+                BuoiId = khoaHocViewModel.Buoi,
+                ThuId = khoaHocViewModel.Thu,
+                DiaDiemId=khoaHocViewModel.DiaDiem
             };
 
             var danhSachKhoaHoc = _dbContext.DanhSachKhoaHoc
                .Where(c => !c.IsCanceled)
                .Include(c => c.ThanhVien)
                .Include(c => c.Buoi)
-               .Include(c => c.Thu).Where(kh => kh.Mon.Contains(searchKey)).Where(kh => kh.BuoiId == khoaHoc.BuoiId);
+               .Include(c => c.Thu).Where(kh => kh.Mon.Contains(searchKey)).Where(kh=>kh.BuoiId==khoaHoc.BuoiId);
+
             
             ViewBag.Search = danhSachKhoaHoc;
             return View(viewModel);

@@ -12,6 +12,7 @@ namespace ELearning.Models
         public DbSet<KhoaHoc> DanhSachKhoaHoc { get; set; }
         public DbSet<Buoi> DanhSachBuoi { get; set; }
         public DbSet<Thu> DanhSachThu { get; set; }
+        public DbSet<DiaDiem> DanhSachDiaDiem { get; set; }
 
         public ApplicationDbContext()
             : base("ELearningConnection", throwIfV1Schema: false)

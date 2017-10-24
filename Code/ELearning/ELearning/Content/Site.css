@@ -41,7 +41,26 @@
     border-width: thin;
     border-color: black;
 }
-
+/*search-filter*/
+.search-name {
+    width: 700px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+}
+.search-droplist {
+    width: 100px;
+    height:30px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+}
 .khoa-hoc > li .action{
     display:none;
     left: 70px;

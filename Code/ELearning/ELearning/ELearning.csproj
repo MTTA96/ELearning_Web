@@ -231,12 +231,20 @@
     <Compile Include="Migrations\201710201453327_AddIsCanceledColumnToCourse.Designer.cs">
       <DependentUpon>201710201453327_AddIsCanceledColumnToCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710220533460_updatedatabase.cs" />
+    <Compile Include="Migrations\201710220533460_updatedatabase.Designer.cs">
+      <DependentUpon>201710220533460_updatedatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710220546214_updatedatabase2.cs" />
+    <Compile Include="Migrations\201710220546214_updatedatabase2.Designer.cs">
+      <DependentUpon>201710220546214_updatedatabase2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Buoi.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
-    <Compile Include="Models\Filter.cs" />
+    <Compile Include="Models\DiaDiem.cs" />
     <Compile Include="Models\KhoaHoc.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Thu.cs" />
@@ -339,6 +347,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710201453327_AddIsCanceledColumnToCourse.resx">
       <DependentUpon>201710201453327_AddIsCanceledColumnToCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710220533460_updatedatabase.resx">
+      <DependentUpon>201710220533460_updatedatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710220546214_updatedatabase2.resx">
+      <DependentUpon>201710220546214_updatedatabase2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
