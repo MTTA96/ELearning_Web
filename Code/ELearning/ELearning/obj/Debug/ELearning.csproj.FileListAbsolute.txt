@@ -266,3 +266,4 @@ C:\Users\Quang Tri\Desktop\Code\ELearning\ELearning\obj\Debug\ELearning.csproj.G
 C:\Users\Quang Tri\Desktop\Code\ELearning\ELearning\obj\Debug\ELearning.csproj.CoreCompileInputs.cache
 C:\Users\Quang Tri\Desktop\Code\ELearning\ELearning\obj\Debug\ELearning.dll
 C:\Users\Quang Tri\Desktop\Code\ELearning\ELearning\obj\Debug\ELearning.pdb
+D:\ELearningWeb\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.updateDSThu.resources

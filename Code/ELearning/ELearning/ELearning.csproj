@@ -239,6 +239,10 @@
     <Compile Include="Migrations\201710220546214_updatedatabase2.Designer.cs">
       <DependentUpon>201710220546214_updatedatabase2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710240647592_updateDSThu.cs" />
+    <Compile Include="Migrations\201710240647592_updateDSThu.Designer.cs">
+      <DependentUpon>201710240647592_updateDSThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -353,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710220546214_updatedatabase2.resx">
       <DependentUpon>201710220546214_updatedatabase2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710240647592_updateDSThu.resx">
+      <DependentUpon>201710240647592_updateDSThu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
