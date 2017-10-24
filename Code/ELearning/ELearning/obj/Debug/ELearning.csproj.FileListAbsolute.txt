@@ -132,6 +132,7 @@ C:\Users\Quang Tri\Desktop\Code\ELearning\ELearning\obj\Debug\ELearning.csproj.G
 C:\Users\Quang Tri\Desktop\Code\ELearning\ELearning\obj\Debug\ELearning.csproj.CoreCompileInputs.cache
 C:\Users\Quang Tri\Desktop\Code\ELearning\ELearning\obj\Debug\ELearning.dll
 C:\Users\Quang Tri\Desktop\Code\ELearning\ELearning\obj\Debug\ELearning.pdb
+D:\ELearningWeb\Code\ELearning\ELearning\obj\Debug\ELearning.csprojResolveAssemblyReference.cache
 D:\ELearningWeb\Code\ELearning\ELearning\bin\ApplicationInsights.config
 D:\ELearningWeb\Code\ELearning\ELearning\bin\roslyn\csc.exe
 D:\ELearningWeb\Code\ELearning\ELearning\bin\roslyn\csc.exe.config
@@ -253,7 +254,6 @@ D:\ELearningWeb\Code\ELearning\ELearning\bin\Microsoft.AI.DependencyCollector.xm
 D:\ELearningWeb\Code\ELearning\ELearning\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\ELearningWeb\Code\ELearning\ELearning\bin\Microsoft.AI.WindowsServer.xml
 D:\ELearningWeb\Code\ELearning\ELearning\bin\Microsoft.AI.Web.xml
-D:\ELearningWeb\Code\ELearning\ELearning\obj\Debug\ELearning.csprojResolveAssemblyReference.cache
 D:\ELearningWeb\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.InitialModel.resources
 D:\ELearningWeb\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.TaoTableKhoaHoc.resources
 D:\ELearningWeb\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.KhoiTaoTableBuoi.resources
@@ -262,7 +262,6 @@ D:\ELearningWeb\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.ThemTenT
 D:\ELearningWeb\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.AddIsCanceledColumnToCourse.resources
 D:\ELearningWeb\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.updatedatabase.resources
 D:\ELearningWeb\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.updatedatabase2.resources
-D:\ELearningWeb\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.updateDSDiaDiem.resources
 D:\ELearningWeb\Code\ELearning\ELearning\obj\Debug\ELearning.csproj.GenerateResource.Cache
 D:\ELearningWeb\Code\ELearning\ELearning\obj\Debug\ELearning.csproj.CoreCompileInputs.cache
 D:\ELearningWeb\Code\ELearning\ELearning\obj\Debug\ELearning.dll
