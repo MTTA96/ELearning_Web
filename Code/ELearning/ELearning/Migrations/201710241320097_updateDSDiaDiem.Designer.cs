@@ -7,13 +7,13 @@ namespace ELearning.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class updateDSThu : IMigrationMetadata
+    public sealed partial class updateDSDiaDiem : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updateDSThu));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updateDSDiaDiem));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710240647592_updateDSThu"; }
+            get { return "201710241320097_updateDSDiaDiem"; }
         }
         
         string IMigrationMetadata.Source

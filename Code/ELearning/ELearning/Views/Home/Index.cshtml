@@ -13,8 +13,9 @@
     <br />
     @Html.DropDownListFor(m => m.DiaDiem, new SelectList(Model.DanhSachDiaDiem, "Id", "Name"), "Địa điểm", new { @class = "search-droplist" })
     @Html.DropDownListFor(m => m.Buoi, new SelectList(Model.DanhSachBuoi, "Id", "Name"), "Buổi",new { @class="search-droplist"})
-        
-    
+    @Html.TextBoxFor(m=>m.HocPhi, new { @class = "search-droplist" })
+
+
 <div class="row">
         <br />
         
