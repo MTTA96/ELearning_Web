@@ -23,12 +23,13 @@
                 <li class="khoa-hoc">
                     <div>
                         @khoaHoc.ThanhVien.Name
-                        <br />@khoaHoc.Mon - @khoaHoc.DiaDiem.Name
+                        <br />@khoaHoc.Mon 
+                        <br />@khoaHoc.DiaDiem.Name
                         <br />Thời gian: @khoaHoc.Buoi.Name - @khoaHoc.Thu.Name
                         <br />Số buổi: @khoaHoc.SoBuoi
                         <br />Học phí: @khoaHoc.HocPhi
                         <br />
-                        <button data-course-id="@khoaHoc.Id" class="btn btn-default btn-sm js-toggle-attendance">Đăng ký</button>
+                        <button data-course-id="@khoaHoc.Id" class="btn btn-default btn-sm js-toggle-attendance">Đăng ký?</button>
                     </div>
                 </li>
             }
@@ -40,17 +41,34 @@
         $(document).ready(function () {
             $(".js-toggle-attendance").click(function (e) {
                 var button = $(e.target);
-                $.post("/api/attendances", { khoaHocId: button.attr("data-course-id") })
-                    .done(function () {
-                        button
-                            .removeClass("btn-default")
-                            .addClass("btn-info")
-                            .alert("Đăng ký thành công!")
-                            .text("Đăng ký");
+                if (button.hasClass("btn-default")) {
+                    $.post("/api/attendances", { khoaHocId: button.attr("data-course-id") })
+                        .done(function () {
+                            alert("Đăng ký thành công")
+                            button
+                                .removeClass("btn-default")
+                                .addClass("btn-info")
+                                .text("Đăng ký");
+                        })
+                        .fail(function () {
+                            alert("Lỗi!");
+                        });
+                }
+                else {
+                    $.ajax({
+                        url: "/api/attendances/" + button.attr("data-course-id"),
+                        method: "DELETE"
                     })
-                    .fail(function () {
-                        alert("Lỗi!");
-                    });
+                        .done(function () {
+                            button
+                                .removeClass("btn-info")
+                                .addClass("btn-default")
+                                .text("Đăng ký?");
+                        })
+                        .fail(function () {
+                            alert("Lỗi!");
+                        });
+                }
             });
         });
     </script>

@@ -139,6 +139,7 @@ namespace ELearning.Controllers
                 .Include(l => l.ThanhVien)
                 .Include(l => l.Buoi)
                 .Include(l => l.Thu)
+                .Include(l => l.DiaDiem)
                 .ToList();
 
             var viewModel = new DanhSachKhoaHocViewModel
