@@ -385,7 +385,6 @@ G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\bin\Micr
 G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\bin\Microsoft.AI.ServerTelemetryChannel.xml
 G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\bin\Microsoft.AI.WindowsServer.xml
 G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\bin\Microsoft.AI.Web.xml
-G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.Update.resources
 G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.csproj.GenerateResource.Cache
 G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.csproj.CoreCompileInputs.cache
 G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.dll
@@ -398,3 +397,8 @@ G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debu
 G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.AddDataDiaDiem.resources
 G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.AddDataBuoi.resources
 G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.AddDataThu.resources
+G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.updatedatabase.resources
+G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.updateDsDiaDiem.resources
+G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.updateDsThu.resources
+G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.updateDsBuoi.resources
+G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.updataUser.resources

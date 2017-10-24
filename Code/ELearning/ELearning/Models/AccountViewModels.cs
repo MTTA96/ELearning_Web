@@ -69,7 +69,6 @@ namespace ELearning.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
         [Display(Name = "Tên")]
         public string Name { get; set; }
 

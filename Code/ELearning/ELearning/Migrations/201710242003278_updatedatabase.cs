@@ -3,7 +3,7 @@ namespace ELearning.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Update : DbMigration
+    public partial class updatedatabase : DbMigration
     {
         public override void Up()
         {
@@ -25,11 +25,11 @@ namespace ELearning.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        Name = c.String(nullable: false, maxLength: 255),
+                        Name = c.String(maxLength: 255),
                         Address = c.String(nullable: false),
-                        NamSinh = c.String(nullable: false),
-                        NgheNghiep = c.String(nullable: false),
-                        BangCap = c.String(nullable: false),
+                        NamSinh = c.String(),
+                        NgheNghiep = c.String(),
+                        BangCap = c.String(),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),

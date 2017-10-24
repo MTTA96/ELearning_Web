@@ -209,9 +209,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710241853271_Update.cs" />
-    <Compile Include="Migrations\201710241853271_Update.Designer.cs">
-      <DependentUpon>201710241853271_Update.cs</DependentUpon>
+    <Compile Include="Migrations\201710242003278_updatedatabase.cs" />
+    <Compile Include="Migrations\201710242003278_updatedatabase.Designer.cs">
+      <DependentUpon>201710242003278_updatedatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710242011037_updateDsDiaDiem.cs" />
+    <Compile Include="Migrations\201710242011037_updateDsDiaDiem.Designer.cs">
+      <DependentUpon>201710242011037_updateDsDiaDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710242013092_updateDsThu.cs" />
+    <Compile Include="Migrations\201710242013092_updateDsThu.Designer.cs">
+      <DependentUpon>201710242013092_updateDsThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710242014329_updateDsBuoi.cs" />
+    <Compile Include="Migrations\201710242014329_updateDsBuoi.Designer.cs">
+      <DependentUpon>201710242014329_updateDsBuoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710242021180_updataUser.cs" />
+    <Compile Include="Migrations\201710242021180_updataUser.Designer.cs">
+      <DependentUpon>201710242021180_updataUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201710242001096_UpdateUser.cs" />
     <Compile Include="Migrations\201710242001096_UpdateUser.Designer.cs">
@@ -324,8 +340,20 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710241853271_Update.resx">
-      <DependentUpon>201710241853271_Update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710242003278_updatedatabase.resx">
+      <DependentUpon>201710242003278_updatedatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710242011037_updateDsDiaDiem.resx">
+      <DependentUpon>201710242011037_updateDsDiaDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710242013092_updateDsThu.resx">
+      <DependentUpon>201710242013092_updateDsThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710242014329_updateDsBuoi.resx">
+      <DependentUpon>201710242014329_updateDsBuoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710242021180_updataUser.resx">
+      <DependentUpon>201710242021180_updataUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710242001096_UpdateUser.resx">
       <DependentUpon>201710242001096_UpdateUser.cs</DependentUpon>

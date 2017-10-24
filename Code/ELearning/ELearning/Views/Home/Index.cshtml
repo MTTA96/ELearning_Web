@@ -6,10 +6,10 @@
 
 @using (Html.BeginForm("Index", "Home"))
 {
-<div class="row">
+    <div class="row">
         <span class="">
-        Tìm theo tên: @Html.TextBox("searchKey", "", new { @class = "search-name" })
-        <button type="submit" value="Search" class="btn btn-primary">Tìm</button>
+            Tìm theo tên: @Html.TextBox("searchKey", "", new { @class = "search-name" })
+            <button type="submit" value="Search" class="btn btn-primary">Tìm</button>
         </span>
         <br />
         @Html.DropDownListFor(m => m.DiaDiem, new SelectList(Model.DanhSachDiaDiem, "Id", "Name"), "Địa điểm", new { @class = "search-droplist" })
@@ -33,7 +33,7 @@
                 </li>
             }
         </ul>
-</div>
+    </div>
 }
 @section scripts{
     <script>
