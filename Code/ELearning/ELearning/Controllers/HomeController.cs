@@ -19,43 +19,47 @@ namespace ELearning.Controllers
         }
         public ActionResult Index()
         {
-            var viewModel = new KhoaHocViewModel
-            {
-                DanhSachBuoi = _dbContext.DanhSachBuoi.ToList()
-                //DanhSachThu = _dbContext.DanhSachThu.ToList()
-            };
             var danhSachKhoaHoc = _dbContext.DanhSachKhoaHoc
                 .Where(c => !c.IsCanceled)
                 .Include(c => c.ThanhVien)
                 .Include(c => c.Buoi)
                 .Include(c => c.Thu);
-            ViewBag.Search = danhSachKhoaHoc;
-            return View(viewModel);
-        }
-        [HttpPost]
-        public ActionResult Index(KhoaHocViewModel khoaHocViewModel,string searchKey)
-        {
-            var viewModel = new KhoaHocViewModel
+
+            var viewModel = new DanhSachKhoaHocViewModel
             {
+                UpCommingCourses = danhSachKhoaHoc,
                 DanhSachBuoi = _dbContext.DanhSachBuoi.ToList()
                 //DanhSachThu = _dbContext.DanhSachThu.ToList()
             };
-            var khoaHoc = new KhoaHoc
-            {
-                BuoiId = khoaHocViewModel.Buoi 
-                //ThuId = khoaHocViewModel.Thu
-          
-            };
 
-            var danhSachKhoaHoc = _dbContext.DanhSachKhoaHoc
-               .Where(c => !c.IsCanceled)
-               .Include(c => c.ThanhVien)
-               .Include(c => c.Buoi)
-               .Include(c => c.Thu).Where(kh => kh.Mon.Contains(searchKey)).Where(kh => kh.BuoiId == khoaHoc.BuoiId);
-            
-            ViewBag.Search = danhSachKhoaHoc;
+            //ViewBag.Search = danhSachKhoaHoc;
             return View(viewModel);
         }
+
+        //[HttpPost]
+        //public ActionResult Index(DanhSachKhoaHocViewModel skhoaHocViewModel,string searchKey)
+        //{
+        //    var viewModel = new KhoaHocViewModel
+        //    {
+        //        DanhSachBuoi = _dbContext.DanhSachBuoi.ToList()
+        //        //DanhSachThu = _dbContext.DanhSachThu.ToList()
+        //    };
+        //    var khoaHoc = new KhoaHoc
+        //    {
+        //        BuoiId = khoaHocViewModel.Buoi 
+        //        //ThuId = khoaHocViewModel.Thu
+          
+        //    };
+
+        //    var danhSachKhoaHoc = _dbContext.DanhSachKhoaHoc
+        //       .Where(c => !c.IsCanceled)
+        //       .Include(c => c.ThanhVien)
+        //       .Include(c => c.Buoi)
+        //       .Include(c => c.Thu).Where(kh => kh.Mon.Contains(searchKey)).Where(kh => kh.BuoiId == khoaHoc.BuoiId);
+            
+        //    ViewBag.Search = danhSachKhoaHoc;
+        //    return View(viewModel);
+        //}
         
 
         public ActionResult About()

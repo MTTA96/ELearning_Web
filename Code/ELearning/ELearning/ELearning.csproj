@@ -257,6 +257,7 @@
     <Compile Include="Models\Thu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\DanhSachKhoaHocViewModel.cs" />
     <Compile Include="ViewModels\KhoaHocViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -320,6 +321,7 @@
     <Content Include="Views\KhoaHoc\Create.cshtml" />
     <Content Include="Views\KhoaHoc\KhoaHocCuaToi.cshtml" />
     <Content Include="Views\Manage\CapNhatThongTin.cshtml" />
+    <Content Include="Views\KhoaHoc\Attending.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

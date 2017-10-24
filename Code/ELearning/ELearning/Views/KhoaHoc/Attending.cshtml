@@ -1,0 +1,30 @@
+﻿@model ELearning.ViewModels.DanhSachKhoaHocViewModel
+
+@{
+    ViewBag.Title = "Attending";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Khóa học đã đăng ký</h2>
+
+<p>
+    <ul class="danh-sach-khoa-hoc">
+        @foreach (var khoaHoc in Model.UpCommingCourses)
+            {
+            <li class="khoa-hoc">
+                <div>
+                    @khoaHoc.ThanhVien.Name
+                    <br />@khoaHoc.Mon - @khoaHoc.DiaDiem
+                    <br />Thời gian: @khoaHoc.Buoi.Name - @khoaHoc.Thu.Name
+                    <br />Số buổi: @khoaHoc.SoBuoi
+                    <br />Học phí: @khoaHoc.HocPhi
+                    <br />
+                    <button data-course-id="@khoaHoc.Id" class="btn btn-default btn-sm js-toggle-attendance">Hủy đăng ký</button>
+                </div>
+            </li>
+        }
+    </ul>
+</p>
+
+
+

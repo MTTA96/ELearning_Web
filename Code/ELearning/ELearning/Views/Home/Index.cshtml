@@ -1,4 +1,4 @@
-﻿@model ELearning.ViewModels.KhoaHocViewModel
+﻿@model ELearning.ViewModels.DanhSachKhoaHocViewModel
 
 @{
     ViewBag.Title = "Home Page";
@@ -7,7 +7,6 @@
 @using (Html.BeginForm("Index", "Home"))
 {
 <div class="row">
-    <p>
         <div>
             Find by name: @Html.TextBox("searchKey", "", new { @class = "form-control" })
             @Html.DropDownListFor(m => m.Buoi, new SelectList(Model.DanhSachBuoi, "Id", "Name"), "", new { @class = "form-control" })
@@ -18,7 +17,7 @@
         
         <br />
         <ul class="danh-sach-khoa-hoc">
-            @foreach (var khoaHoc in ViewBag.Search)
+            @foreach (var khoaHoc in Model.UpCommingCourses)
             {
                 <li class="khoa-hoc">
                     <div>
@@ -27,12 +26,12 @@
                         <br />Thời gian: @khoaHoc.Buoi.Name - @khoaHoc.Thu.Name
                         <br />Số buổi: @khoaHoc.SoBuoi
                         <br />Học phí: @khoaHoc.HocPhi
+                        <br />
                         <button data-course-id="@khoaHoc.Id" class="btn btn-default btn-sm js-toggle-attendance">Đăng ký</button>
                     </div>
                 </li>
             }
         </ul>
-    </p>
 </div>
 }
 @section scripts{
@@ -41,10 +40,6 @@
             $(".js-toggle-attendance").click(function (e) {
                 var button = $(e.target);
                 $.post("/api/attendances", { khoaHocId: button.attr("data-course-id") })
-                //$.ajax({
-                //    url: "/api/attendances" + { khoaHocId: button.attr("data-course-id") },
-                //    method: "POST"
-                //})
                     .done(function () {
                         button
                             .removeClass("btn-default")
