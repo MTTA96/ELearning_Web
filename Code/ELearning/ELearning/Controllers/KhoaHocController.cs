@@ -69,6 +69,7 @@ namespace ELearning.Controllers
                 .Include(l => l.ThanhVien)
                 .Include(c => c.Buoi)
                 .Include(c => c.Thu)
+                .Include(c => c.DiaDiem)
                 .ToList();
 
             return View(danhSachKhoaHoc);
@@ -90,6 +91,7 @@ namespace ELearning.Controllers
                 HocPhi = khoaHoc.HocPhi,
                 DanhSachBuoi = _dbContext.DanhSachBuoi.ToList(),
                 DanhSachThu = _dbContext.DanhSachThu.ToList(),
+                DanhSachDiaDiem = _dbContext.DanhSachDiaDiem.ToList(),
                 Heading = "Sua Khoa Hoc",
                 Id = khoaHoc.Id
             };

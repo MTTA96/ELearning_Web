@@ -213,6 +213,22 @@
     <Compile Include="Migrations\201710241853271_Update.Designer.cs">
       <DependentUpon>201710241853271_Update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710242001096_UpdateUser.cs" />
+    <Compile Include="Migrations\201710242001096_UpdateUser.Designer.cs">
+      <DependentUpon>201710242001096_UpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710242011175_AddDataDiaDiem.cs" />
+    <Compile Include="Migrations\201710242011175_AddDataDiaDiem.Designer.cs">
+      <DependentUpon>201710242011175_AddDataDiaDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710242012393_AddDataBuoi.cs" />
+    <Compile Include="Migrations\201710242012393_AddDataBuoi.Designer.cs">
+      <DependentUpon>201710242012393_AddDataBuoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710242015405_AddDataThu.cs" />
+    <Compile Include="Migrations\201710242015405_AddDataThu.Designer.cs">
+      <DependentUpon>201710242015405_AddDataThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -310,6 +326,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710241853271_Update.resx">
       <DependentUpon>201710241853271_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710242001096_UpdateUser.resx">
+      <DependentUpon>201710242001096_UpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710242011175_AddDataDiaDiem.resx">
+      <DependentUpon>201710242011175_AddDataDiaDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710242012393_AddDataBuoi.resx">
+      <DependentUpon>201710242012393_AddDataBuoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710242015405_AddDataThu.resx">
+      <DependentUpon>201710242015405_AddDataThu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

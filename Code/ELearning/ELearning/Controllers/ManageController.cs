@@ -344,17 +344,24 @@ namespace ELearning.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = model;
-                var store = new UserStore<ApplicationUser>(new ApplicationDbContext());
-                var manager = new ApplicationUserManager(store);
-                store.Context.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                ApplicationUser user = UserManager.FindById(model.Id);
+                user.UserName = model.Email;
+                user.Name = model.Name;
+                user.Email = model.Email;
+                user.Address = model.Address; // Extra Property
+                user.BangCap = model.BangCap;
+                user.PhoneNumber = model.PhoneNumber;
+                user.NgheNghiep = model.NgheNghiep;
+                user.NamSinh = model.NamSinh;
 
+                IdentityResult result = await UserManager.UpdateAsync(user);
+                return RedirectToAction("Index", "Home");
             }
 
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+
 
         #region Helpers
         // Used for XSRF protection when adding external logins

@@ -394,3 +394,7 @@ G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debu
 G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\bin\ELearning.dll.config
 G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\bin\ELearning.dll
 G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\bin\ELearning.pdb
+G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.UpdateUser.resources
+G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.AddDataDiaDiem.resources
+G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.AddDataBuoi.resources
+G:\IT\Code_engine\Projects\Web\EWays\ELearning\Code\ELearning\ELearning\obj\Debug\ELearning.Migrations.AddDataThu.resources
